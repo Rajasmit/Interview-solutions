@@ -17,8 +17,19 @@ I felt it was best to separate it to allow it to be more modular and extendable.
 
 There are three major methods and two utility methods.
 
-<p>The three major methods are: *dijkstra(), getWeightPath(), and getAllPathsBetween()*</p>
-<p>The two utility methods are: *modGraph() and modUndo()*</p>
+- The three major methods are:
+
+  - \_dijkstra()
+  - getWeightPath()
+  - getAllPathsBetween()\_
+
+  ***
+
+  ***
+
+- The two utility methods are:
+  - \_modGraph()
+  - modUndo()\_
 
 The **dijkstra** method is the traditional lowest cost/most effiecent path from a source to a target in a directed weighted graph. This
 function is minimally modified to be able to exit early if the target vertex is reached
@@ -31,11 +42,6 @@ The **getAllPathsBetween** method is a modified Breadth First Search. In this mo
 marked visited. Since vertices are no longer marked visited there needed to be a new way to reduce the queue without missing
 potential paths. The solution I developed is create a dictionary whose keys are verticies that mapped to a set of paths
 whose final destination is the key.
-
-```
-            E.g {"A":{["A", "B", "A"], ["B", "C", "A"], ["F", "A"]},
-                 "E":{["F", "E"], ["D", "E", "D", "E"] }
-```
 
 The solution allows me to keep track-record of paths that have been already been generated and systematically generates new paths, and can easily
 prevent the duplication of paths. With the help of the previously mentioned dictionary the queue is only appended to if
@@ -66,14 +72,9 @@ The **distPath** method modifies the output of getWeightPath method of Graph.
 
 - In TrainRoutes if a path does not exists within the graph disPath returns "NO SUCH ROUTE" instead of -1.
 
-The **numDiffPaths** method simply calls the getAllPathsBetween method of Graph but only returns the number of different paths, not
+The **numDiffPaths** method calls the getAllPathsBetween method of Graph but only returns the number of different paths, not
 all the paths.
 
 #### simple_util.py
 
-Contains file read functions and formatting utility for feeding into graphs.
-
-#### tests.py
-
-These tests are not using Unittest because instructions were not to use external any libraries except for JUnit, and Ant/Maven.
-However, conversion to Unittest is simple when required.
+It contains the file reading functions and formatting utility for feeding the data into the graphs.
