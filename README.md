@@ -17,22 +17,20 @@ I felt it was best to separate it to allow it to be more modular and extendable.
 
 There are three major methods and two utility methods.
 
+---
+
 - The three major methods are:
 
   - \_dijkstra()
   - getWeightPath()
   - getAllPathsBetween()\_
 
-  ***
-
-  ***
-
 - The two utility methods are:
   - \_modGraph()
   - modUndo()\_
-
-The **dijkstra** method is the traditional lowest cost/most effiecent path from a source to a target in a directed weighted graph. This
-function is minimally modified to be able to exit early if the target vertex is reached
+  ***
+  The **dijkstra** method is the traditional lowest cost/most effiecent path from a source to a target in a directed weighted graph. This
+  function is minimally modified to be able to exit early if the target vertex is reached
 
 The **getWeightPath** method takes a path and returns the weight of the path if the entirety of the path exists
 within the graph. If no such path exists, it returns -1. Functionally, this simply looks at each adjacent
