@@ -1,0 +1,5 @@
+AB2
+BC1
+BD5
+CD3
+DE1
